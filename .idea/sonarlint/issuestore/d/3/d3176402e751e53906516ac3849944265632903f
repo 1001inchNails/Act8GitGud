@@ -1,0 +1,34 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(©—Ğ°8é¿­¡â1
+Q
+java:S3740"/Provide the parametrized type for this generic.(Ï‚äéøÿÿÿÿ8é¿­¡â1
+z	java:S116	"YRename this field "indice_Usuario" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“†³Çşÿÿÿÿ8®À­¡â1
+»
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(‚ì¬Àûÿÿÿÿ8®À­¡â1
+L	java:S106#"+Replace this use of System.out by a logger.(¬Û·½üÿÿÿÿ8±À­¡â1
+L	java:S106,"+Replace this use of System.out by a logger.(æ©ï¼ÿÿÿÿÿ8³À­¡â1
+L	java:S1060"+Replace this use of System.out by a logger.(¶ÿÛáùÿÿÿÿ8³À­¡â1
+L	java:S1066"+Replace this use of System.out by a logger.(ğûÿÿÿÿ8³À­¡â1
+G	java:S106@"+Replace this use of System.out by a logger.(ó©Ë•8´À­¡â1
+L	java:S106H"+Replace this use of System.out by a logger.(©ï••úÿÿÿÿ8´À­¡â1
+L	java:S106L"+Replace this use of System.out by a logger.(Ÿ°¡ãûÿÿÿÿ8´À­¡â1
+J
+java:S1905L"(Remove this unnecessary cast to "Libro".(Ÿ°¡ãûÿÿÿÿ8´À­¡â1
+L	java:S106T"+Replace this use of System.out by a logger.(›¥ö²úÿÿÿÿ8µÀ­¡â1
+G	java:S106Z"+Replace this use of System.out by a logger.(©ø³8µÀ­¡â1
+L	java:S106\"+Replace this use of System.out by a logger.(ÓÈ®¼ûÿÿÿÿ8µÀ­¡â1
+L	java:S106^"+Replace this use of System.out by a logger.(¯«’ˆúÿÿÿÿ8¶À­¡â1
+t
+java:S3776c"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(“Şëùÿÿÿÿ8¶À­¡â1
+`
+java:S1155e">Use isEmpty() to check whether the collection is empty or not.(ƒüåïıÿÿÿÿ8¶À­¡â1
+G	java:S106f"+Replace this use of System.out by a logger.(éŸÛÃ8¶À­¡â1
+L	java:S106j"+Replace this use of System.out by a logger.(»İ›æøÿÿÿÿ8¶À­¡â1
+G	java:S106n"+Replace this use of System.out by a logger.(šÿÒÔ8¶À­¡â1
+L	java:S106y"+Replace this use of System.out by a logger.(›¥ö²úÿÿÿÿ8·À­¡â1
+`
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(ÚËëıÿÿÿÿ8·À­¡â1
+M	java:S106€"+Replace this use of System.out by a logger.(­Ïğùÿÿÿÿ8·À­¡â1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(ó©Ë•8·À­¡â1
+M	java:S106†"+Replace this use of System.out by a logger.(ƒÇãˆúÿÿÿÿ8·À­¡â1
