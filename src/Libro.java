@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Libro {
     private String titulo;
     private String autor;
@@ -5,10 +7,22 @@ public class Libro {
     private boolean prestado;
     private String quienloTieneAhora;
 
-    public Libro(String titulo, String autor, String isbn) {
+
+
+    private ArrayList<String> colaSolicitud = new ArrayList();
+
+    public Libro(String titulo, String autor, String isbn,boolean prestado) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
+        this.prestado= prestado;
+    }
+
+
+    public ArrayList<String> getColaSolicitud() {return colaSolicitud;}
+
+    public void setcolaSolicitud(String opcion) {
+        this.colaSolicitud.add(opcion);
     }
 
     public String getTitulo() {

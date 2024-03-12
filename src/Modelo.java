@@ -12,13 +12,13 @@ public class Modelo {
         crearUsuario(new Usuario("Pepe", "Martinez", "651 231 555", "PeMart@usuario.com"));
         crearUsuario(new Usuario("Luisa", "Fernandez", "622 321 666", "LuFer@usuario.com"));
         crearUsuario(new Usuario("Agripino", "Babieca", "644 123 777", "AgBab@usuario.com"));
-        crearLibro(new Libro("Libro 01", "Autor 01", "0000000000001"));
-        crearLibro(new Libro("Libro 02", "Autor 02", "0000000000002"));
-        crearLibro(new Libro("Libro 03", "Autor 03", "0000000000003"));
-        crearLibro(new Libro("Libro 04", "Autor 04", "0000000000004"));
-        crearLibro(new Libro("Libro 05", "Autor 05", "0000000000005"));
-        crearLibro(new Libro("Libro 06", "Autor 06", "0000000000006"));
-        crearLibro(new Libro("Libro 07", "Autor 07", "0000000000007"));
+        crearLibro(new Libro("Libro 01", "Autor 01", "0000000000001", false));
+        crearLibro(new Libro("Libro 02", "Autor 02", "0000000000002", false));
+        crearLibro(new Libro("Libro 03", "Autor 03", "0000000000003", false));
+        crearLibro(new Libro("Libro 04", "Autor 04", "0000000000004", false));
+        crearLibro(new Libro("Libro 05", "Autor 05", "0000000000005", false));
+        crearLibro(new Libro("Libro 06", "Autor 06", "0000000000006", false));
+        crearLibro(new Libro("Libro 07", "Autor 07", "0000000000007", true));
     }
 
     public static Modelo getInstance() {    //instanciación única
@@ -72,12 +72,35 @@ public class Modelo {
             System.out.print("Introduzca titulo del libro que quiera: ");
             String opcion = scanner.nextLine();
             for(int i = 0; i < this.listaLibros.size(); ++i) {
-                if (Objects.equals(this.listaLibros.get(i).getTitulo(), opcion) && (!this.listaLibros.get(i).isPrestado())) {   //asi impedimos que se pueda cojer el mismo libro repetidamente
-                    System.out.println(this.listaUsuarios.get(this.indice_Usuario).getNombre() + " ha tomado prestado el libro " + ((Libro)this.listaLibros.get(i)).getTitulo() + "\n");
-                    flag = false;
-                    this.listaUsuarios.get(this.indice_Usuario).setLibrosPrestados(this.listaLibros.get(i).getTitulo());    //metemos el nombre del libro en la lista de libros prestados de ese usuario
-                    this.listaLibros.get(i).setQuienloTieneAhora(this.listaUsuarios.get(this.indice_Usuario).getNombre());  //metemos el nombre del usuario en la propiedad del objeto libro que identifica a quien tiene el libro actualmente
-                    this.listaLibros.get(i).setPrestado(true);  //cambiamos el estado del libro a prestado mediante boolean
+                if (Objects.equals(this.listaLibros.get(i).getTitulo(), opcion)) {
+                    if(this.listaLibros.get(i).isPrestado()){
+                        System.out.println("Este libro está prestado. ¿Quiere reservarlo? (si/no): ");
+                        String respuesta=scanner.nextLine();
+                        if(Objects.equals(respuesta, "si")){
+                            boolean checker=true;
+                            for(String libro:this.listaUsuarios.get(this.indice_Usuario).getLibrosPrestados()){
+                                if(Objects.equals(libro,this.listaLibros.get(i).getTitulo())){
+                                    System.out.println("Ya ha tomado prestado ese libro\n");
+                                    flag = false;
+                                    checker=false;
+                                }
+                            }
+                            if(checker==true){
+                                this.listaLibros.get(i).setcolaSolicitud(this.listaUsuarios.get(this.indice_Usuario).getNombre());
+                                System.out.println("Su nombre se ha anhadido a la lista de espera del libro: "+this.listaLibros.get(i).getTitulo());
+                                System.out.println("\n");
+                                flag = false;
+                            }
+                        }else{flag=false;}
+                    }else{
+                        System.out.println(this.listaUsuarios.get(this.indice_Usuario).getNombre() + " ha tomado prestado el libro " + ((Libro)this.listaLibros.get(i)).getTitulo() + "\n");
+                        flag = false;
+                        this.listaUsuarios.get(this.indice_Usuario).setLibrosPrestados(this.listaLibros.get(i).getTitulo());    //metemos el nombre del libro en la lista de libros prestados de ese usuario
+                        this.listaLibros.get(i).setQuienloTieneAhora(this.listaUsuarios.get(this.indice_Usuario).getNombre());  //metemos el nombre del usuario en la propiedad del objeto libro que identifica a quien tiene el libro actualmente
+                        this.listaLibros.get(i).setPrestado(true);  //cambiamos el estado del libro a prestado mediante boolean
+                    }
+
+
                 }
             }
             if (flag) {
@@ -93,6 +116,14 @@ public class Modelo {
             } else {
                 System.out.println("Disponible\n");
             }
+            if(libro.getColaSolicitud().size()>0){
+                System.out.println("Lista de espera:");
+                for(String nombre:libro.getColaSolicitud()){
+                    System.out.println(nombre);
+                }
+            }
+            System.out.println("\n");
+
         }
     }
 
