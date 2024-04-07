@@ -10,10 +10,10 @@ Todo esto se debe subir a un repositorio del cual me compartiréis el enlace.
 
 **Funcionamiento básico:**
 El programa se divide en cuatro clases:
--**Libro:** establece la estructura para los objetos tipo Libro.
--**Usuario:** establece la estructura para los objetos tipo Usuario.
--**Biblioteca:** organiza el menú y realiza las llamadas a la clase Modelo.
--**Modelo:** se encarga de realizar las inicializaciones de los datos y de llevar a cabo las búsquedas y cambios que se soliciten.
+* **Libro:** establece la estructura para los objetos tipo Libro.
+* **Usuario:** establece la estructura para los objetos tipo Usuario.
+* **Biblioteca:** organiza el menú y realiza las llamadas a la clase Modelo.
+* **Modelo:** se encarga de realizar las inicializaciones de los datos y de llevar a cabo las búsquedas y cambios que se soliciten.
 
 # **Anotaciones de interés**
 
